@@ -1,7 +1,7 @@
 {
-  "name": "route-plotter",
-  "version": "3.1.0",
-  "description": "Route Plotter v3 - Interactive path animation tool",
+  "name": "dot-crowd-navigator",
+  "version": "0.1.0",
+  "description": "Dot Crowd Navigator — graph-based crowd-flow simulation tool",
   "type": "module",
   "scripts": {
     "start": "node build.js --watch --serve",

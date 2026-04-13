@@ -1,8 +1,8 @@
-# Route Plotter
+# Dot Crowd Navigator
 
-Create animated routes on maps or any image. Drop in a background, click to place waypoints, and export a smooth animated video or standalone HTML file.
+Graph-based crowd-flow simulation tool. Draw a network of nodes and weighted edges over a background image, then run a swarm of dots through the network to visualise pedestrian or crowd flow patterns. Forked from Route Plotter; see `_Joe/Dot Crowd Navigator App Overview.md` for full context.
 
-**[Try the live demo](https://djdaojones.github.io/router-plotter-02/)**
+> **Note:** This README still contains legacy Route Plotter documentation below. A full rewrite is tracked in the backlog (Phase 1F).
 
 ## Features
 

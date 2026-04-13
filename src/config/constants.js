@@ -1,5 +1,5 @@
 /**
- * Application-wide constants for Route Plotter v3
+ * Application-wide constants for Dot Crowd Navigator
  * 
  * Note: APP_VERSION is injected at build time via esbuild's define feature.
  * See build.js for version management. Do not define APP_VERSION here.

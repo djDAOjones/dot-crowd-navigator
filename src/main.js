@@ -1,5 +1,5 @@
 /**
- * Route Plotter v3 - Main Application Entry Point
+ * Dot Crowd Navigator - Main Application Entry Point
  * 
  * ## Version Management
  * 
@@ -17,7 +17,7 @@
  * 
  * See build.js for implementation details.
  */
-console.log(`🚀 Route Plotter v${APP_VERSION} loaded`);
+console.log(`🚀 Dot Crowd Navigator v${APP_VERSION} loaded`);
 
 // ========== DEBUG LOG BUFFER ==========
 // Captures console.log, .warn, .error for easy copying to clipboard
@@ -50,7 +50,7 @@ const DEBUG_LOG_MAX_SIZE = 500; // Keep last 500 log entries
 function buildDebugLogContent() {
   const now = new Date();
   const header = [
-    `# Route Plotter v${APP_VERSION} — Debug Log`,
+    `# Dot Crowd Navigator v${APP_VERSION} — Debug Log`,
     '',
     `| Field | Value |`,
     `|-------|-------|`,
@@ -77,7 +77,7 @@ function downloadDebugLog() {
   const a = document.createElement('a');
   a.href = url;
   const ts = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
-  a.download = `route-plotter-debug-${ts}.md`;
+  a.download = `dot-crowd-navigator-debug-${ts}.md`;
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -98,10 +98,10 @@ async function copyDebugLog() {
 
 // Update page title and header with version on load
 document.addEventListener('DOMContentLoaded', () => {
-  document.title = `Route Plotter v${APP_VERSION}`;
+  document.title = `Dot Crowd Navigator v${APP_VERSION}`;
   const h1 = document.getElementById('app-title');
   if (h1) {
-    h1.textContent = 'Route Plotter';
+    h1.textContent = 'Dot Crowd Navigator';
     h1.title = `Version ${APP_VERSION}`;
   }
   
@@ -191,8 +191,8 @@ function snapToAngle(refX, refY, targetX, targetY, snapDeg = 15) {
   };
 }
 
-// Main application class for Route Plotter v3
-class RoutePlotter {
+// Main application class for Dot Crowd Navigator
+class DotCrowdNavigator {
   constructor() {
     // Services
     this.storageService = new StorageService();
@@ -689,7 +689,7 @@ class RoutePlotter {
     // Start animation loop (runs continuously for rendering)
     this.startRenderLoop();
     
-    console.log(`✅ Route Plotter v${APP_VERSION} initialized`);
+    console.log(`✅ Dot Crowd Navigator v${APP_VERSION} initialized`);
   }
   
   /**
@@ -2290,7 +2290,7 @@ class RoutePlotter {
       this.interactionHandler?.setSelectedWaypoint(waypoint);
       this.uiController?.updateWaypointEditor(waypoint);
       this.updateWaypointList();
-      this.updateWaypointEditor(); // Update RoutePlotter's editor (includes camera controls)
+      this.updateWaypointEditor(); // Update DotCrowdNavigator's editor (includes camera controls)
       this._updateCameraControlsVisibility(false); // Single selection mode
       
       // Sync swatch picker radios with updated hidden input values
@@ -3142,7 +3142,7 @@ class RoutePlotter {
       this._jklDirection = 1;
       this.animationEngine.setPlaybackSpeed(1);
       this.animationEngine.play();
-    } else if (this._jklSpeedMultiplier < RoutePlotter.JKL_MAX_SPEED) {
+    } else if (this._jklSpeedMultiplier < DotCrowdNavigator.JKL_MAX_SPEED) {
       // Double the speed
       this._jklSpeedMultiplier *= 2;
       this.animationEngine.setPlaybackSpeed(this._jklSpeedMultiplier);
@@ -3169,7 +3169,7 @@ class RoutePlotter {
       this._jklDirection = -1;
       this.animationEngine.setPlaybackSpeed(-1);
       this.animationEngine.play();
-    } else if (this._jklSpeedMultiplier < RoutePlotter.JKL_MAX_SPEED) {
+    } else if (this._jklSpeedMultiplier < DotCrowdNavigator.JKL_MAX_SPEED) {
       // Double the reverse speed
       this._jklSpeedMultiplier *= 2;
       this.animationEngine.setPlaybackSpeed(-this._jklSpeedMultiplier);
@@ -5365,13 +5365,13 @@ class RoutePlotter {
   
   /**
    * Update the title to show/hide unsaved changes indicator
-   * Per UI spec §2.1: "Route Plotter v3.1.9 ●" when dirty
+   * Per UI spec §2.1: "Dot Crowd Navigator v0.1.0 ●" when dirty
    */
   updateTitleIndicator() {
     const titleEl = document.getElementById('app-title');
     if (!titleEl) return;
     
-    const baseTitle = 'Route Plotter';
+    const baseTitle = 'Dot Crowd Navigator';
     titleEl.textContent = this._isDirty ? `${baseTitle} ●` : baseTitle;
     titleEl.title = this._isDirty ? `Version ${APP_VERSION} · Unsaved changes` : `Version ${APP_VERSION}`;
   }
@@ -6033,11 +6033,11 @@ class RoutePlotter {
     this.background = null;
     this.elements = null;
     
-    console.log('Route Plotter destroyed');
+    console.log('Dot Crowd Navigator destroyed');
   }
 }
 
 // Initialize app when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  window.app = new RoutePlotter();
+  window.app = new DotCrowdNavigator();
 });
